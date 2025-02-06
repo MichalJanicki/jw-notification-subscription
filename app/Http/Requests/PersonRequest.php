@@ -23,9 +23,9 @@ class PersonRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => ['required', 'string', 'size:20'],
-            'last_name' => ['required', 'string', 'size:60'],
-            'email' => ['required', 'email', 'size:100'],
+            'first_name' => ['required', 'string', 'min:3', 'max:20'],
+            'last_name' => ['required', 'string', 'min:3', 'max:60'],
+            'email' => ['required', 'email', 'min:6', 'max:100'],
             'phone' => ['required', 'string', 'size:12'],
             'sms_subscription' => ['boolean'],
             'email_subscription' => ['boolean'],
